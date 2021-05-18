@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76e61518-b47b-4bd9-9a3c-600fdbd9d911" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpashopbasic/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpashopbasic/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpashopbasic/domain/inheritance/Content.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpashopbasic/domain/inheritance/Content.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpashopbasic/jpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpashopbasic/jpaMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +95,7 @@
       <updated>1621146187646</updated>
       <workItem from="1621146189389" duration="6000" />
       <workItem from="1621152632194" duration="13139000" />
-      <workItem from="1621300785637" duration="1603000" />
+      <workItem from="1621300785637" duration="3098000" />
     </task>
     <servers />
   </component>

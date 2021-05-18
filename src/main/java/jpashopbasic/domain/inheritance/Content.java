@@ -5,9 +5,9 @@ import jpashopbasic.BaseEntity;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn
-public class Content extends BaseEntity {
+public abstract class Content extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "content_id")

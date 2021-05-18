@@ -1,5 +1,6 @@
 package jpashopbasic;
 
+import jpashopbasic.domain.inheritance.Book;
 import jpashopbasic.domain.inheritance.Movie;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class jpaMain {
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
 
-//        test(emf);
+        test(emf);
 
         emf.close();
     }
@@ -36,12 +37,19 @@ public class jpaMain {
             movie.setName("name");
             movie.setPrice(10000);
 
+            Book book = new Book();
+            book.setName("book");
+            book.setAuthor("author");
+            book.setPrice(8000);
+
             em.flush();
             em.clear();
 
             em.persist(movie);
+            em.persist(book);
 
             Movie foundMovie = em.find(Movie.class, movie.getId());
+            Book foundBook = em.find(Book.class, book.getId());
 
             tx.commit();
         } catch (Exception e) {
