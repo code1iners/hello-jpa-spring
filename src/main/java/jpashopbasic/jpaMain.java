@@ -1,6 +1,8 @@
 package jpashopbasic;
 
+import jpashopbasic.domain.Address;
 import jpashopbasic.domain.Member;
+import jpashopbasic.domain.Period;
 import jpashopbasic.domain.inheritance.Book;
 import jpashopbasic.domain.inheritance.Movie;
 import org.hibernate.Hibernate;
@@ -33,19 +35,13 @@ public class jpaMain {
         tx.begin();
 
         try {
+
             Member member = new Member();
-            member.setName("name");
+            member.setName("member1");;
+            member.setHomeAddress(new Address("city", "street", "zipcode"));
+            member.setWorkPeriod(new Period());
+
             em.persist(member);
-
-            em.flush();
-            em.clear();
-
-            Member refMember = em.getReference(Member.class, member.getId());
-            // note. check is initialized ref.
-            boolean isLoaded = emf.getPersistenceUnitUtil().isLoaded(refMember);
-            System.out.println("isLoaded = " + isLoaded);
-            // note. forced initialization ref.
-            Hibernate.initialize(refMember);
 
             tx.commit();
         } catch (Exception e) {
