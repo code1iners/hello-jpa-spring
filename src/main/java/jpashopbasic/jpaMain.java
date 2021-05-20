@@ -1,7 +1,9 @@
 package jpashopbasic;
 
+import jpashopbasic.domain.Member;
 import jpashopbasic.domain.inheritance.Book;
 import jpashopbasic.domain.inheritance.Movie;
+import org.hibernate.Hibernate;
 
 import java.util.List;
 
@@ -31,25 +33,20 @@ public class jpaMain {
         tx.begin();
 
         try {
-            Movie movie = new Movie();
-            movie.setDirector("director");
-            movie.setActor("actor");
-            movie.setName("name");
-            movie.setPrice(10000);
-
-            Book book = new Book();
-            book.setName("book");
-            book.setAuthor("author");
-            book.setPrice(8000);
+            Member member = new Member();
+            member.setName("name");
+            em.persist(member);
 
             em.flush();
             em.clear();
 
-            em.persist(movie);
-            em.persist(book);
 
-            Movie foundMovie = em.find(Movie.class, movie.getId());
-            Book foundBook = em.find(Book.class, book.getId());
+            Member refMember = em.getReference(Member.class, member.getId());
+            // note. check is initialized ref.
+            boolean isLoaded = emf.getPersistenceUnitUtil().isLoaded(refMember);
+            System.out.println("isLoaded = " + isLoaded);
+            // note. forced initialization ref.
+            Hibernate.initialize(refMember);
 
             tx.commit();
         } catch (Exception e) {
