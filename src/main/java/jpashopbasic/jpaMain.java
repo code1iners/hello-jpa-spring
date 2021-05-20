@@ -1,18 +1,13 @@
 package jpashopbasic;
 
 import jpashopbasic.domain.Address;
+import jpashopbasic.domain.AddressEntity;
 import jpashopbasic.domain.Member;
-import jpashopbasic.domain.Period;
-import jpashopbasic.domain.inheritance.Book;
-import jpashopbasic.domain.inheritance.Movie;
-import org.hibernate.Hibernate;
 
 import java.util.List;
+import java.util.Set;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 
 public class jpaMain {
 
@@ -36,16 +31,20 @@ public class jpaMain {
 
         try {
 
-            Member member = new Member();
-            member.setName("member1");;
-            member.setHomeAddress(new Address("city", "street", "zipcode"));
-            member.setWorkPeriod(new Period());
+            String query = "select m from Member m where m.name like '%kim%'";
 
-            em.persist(member);
+            List<Member> members = em
+                    .createQuery(query, Member.class)
+                    .getResultList();
+
+            for (Member member: members) {
+                System.out.println("member = " + member);
+            }
 
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
+            e.printStackTrace();
         } finally {
             em.close();
         }

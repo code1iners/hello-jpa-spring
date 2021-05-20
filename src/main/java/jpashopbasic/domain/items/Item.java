@@ -1,13 +1,14 @@
-package jpashopbasic.domain;
+package jpashopbasic.domain.items;
 
-import jpashopbasic.BaseEntity;
+import jpashopbasic.domain.Category;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Item extends BaseEntity {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class Item {
 
     @Id
     @GeneratedValue

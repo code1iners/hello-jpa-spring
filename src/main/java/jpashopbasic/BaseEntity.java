@@ -7,16 +7,16 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public class BaseEntity {
 
-    @Column(name = "CREATED_BY")
+    @Column(name = "created_by")
     private String createdBy;
 
-    @Column(name = "CREATED_DATE")
+    @Column(name = "created_date")
     private LocalDateTime createdDate;
 
-    @Column(name = "UPDATED_BY")
+    @Column(name = "updated_by")
     private String updatedBy;
 
-    @Column(name = "UPDATED_DATE")
+    @Column(name = "updated_date")
     private LocalDateTime updatedDate;
 
     public String getCreatedBy() {

@@ -1,18 +1,20 @@
 package jpashopbasic.domain;
 
-import jpashopbasic.BaseEntity;
+import jpashopbasic.domain.items.Item;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Category extends BaseEntity {
+public class Category {
 
     @Id
     @GeneratedValue
     @Column(name = "category_id")
     private Long id;
+
+    private String name;
 
     @ManyToMany
     @JoinTable(
@@ -22,9 +24,7 @@ public class Category extends BaseEntity {
     )
     private List<Item> items = new ArrayList<>();
 
-    private String name;
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
 
@@ -39,20 +39,20 @@ public class Category extends BaseEntity {
         this.id = id;
     }
 
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     public Category getParent() {
