@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76e61518-b47b-4bd9-9a3c-600fdbd9d911" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jpashopbasic/domain/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jpashopbasic/domain/Period.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jpashopbasic/jpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpashopbasic/jpaMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jpashopbasic/jpaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jpashopbasic/jpaMain.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +34,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1sbfPD6AuwSetsWwMyIycYFnIIE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -83,6 +85,7 @@
       <workItem from="1621146189389" duration="6000" />
       <workItem from="1621152632194" duration="13139000" />
       <workItem from="1621300785637" duration="6370000" />
+      <workItem from="1621470117182" duration="420000" />
     </task>
     <servers />
   </component>
@@ -99,6 +102,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

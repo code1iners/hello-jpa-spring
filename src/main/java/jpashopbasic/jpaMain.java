@@ -40,7 +40,6 @@ public class jpaMain {
             em.flush();
             em.clear();
 
-
             Member refMember = em.getReference(Member.class, member.getId());
             // note. check is initialized ref.
             boolean isLoaded = emf.getPersistenceUnitUtil().isLoaded(refMember);
